@@ -28,33 +28,43 @@ namespace MicrocredCalc
 
         private void Calculate_Click(object sender, RoutedEventArgs e)
         {
+            
             int term = int.Parse(tbTerm.Text);
-            int loanSum = int.Parse(tbSum.Text);
+            double loanSum = double.Parse(tbSum.Text);
 
             int firstPart = term / 3;
             int secondPart = firstPart * 2;
 
-            Dictionary<int, float> daysOnTerm = new Dictionary<int, float>();
+
+            Dictionary<int, double> daysOnTerm = new Dictionary<int, double>();
 
             for (int i = 1; i < firstPart; i++)
             {
-                daysOnTerm.Add(i, float.Parse(tbFirstPart.Text));
+                daysOnTerm.Add(i, double.Parse(tbFirstPart.Text));
             }
             for (int i = firstPart; i < secondPart; i++)
             {
-                daysOnTerm.Add(i, float.Parse(tbSecondPart.Text));
+                daysOnTerm.Add(i, double.Parse(tbSecondPart.Text));
             }
             for (int i = secondPart; i <= term; i++)
             {
-                daysOnTerm.Add(i, float.Parse(tbThirdPart.Text));
+                daysOnTerm.Add(i, double.Parse(tbThirdPart.Text));
             }
+
+            double percentSum = 0;
+            string detail = "День\tСтавка\tДолг\tСумма выплаты";
 
             foreach (var pair in daysOnTerm)
             {
-                Console.WriteLine("{0} {1}", pair.Key, pair.Value);
-
+                Console.WriteLine($"{pair.Key} {pair.Value}");
+                percentSum += loanSum * (pair.Value / 100);
+                detail += $"\n{pair.Key}\t{pair.Value}\t{percentSum}\t{loanSum + percentSum}";
             }
 
+            lbPaymentSum.Content += Convert.ToString(loanSum + percentSum);
+            lbPercentSum.Content += Convert.ToString(percentSum);
+            lbEffRate.Content += Convert.ToString(Math.Round(percentSum / loanSum / term * 100, 2));
+            tbDetail.Text = detail;
             
         }
     }
