@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace MicrocredCalc
 {
     /// <summary>
@@ -22,7 +23,39 @@ namespace MicrocredCalc
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();            
+        }
+
+        private void Calculate_Click(object sender, RoutedEventArgs e)
+        {
+            int term = int.Parse(tbTerm.Text);
+            int loanSum = int.Parse(tbSum.Text);
+
+            int firstPart = term / 3;
+            int secondPart = firstPart * 2;
+
+            Dictionary<int, float> daysOnTerm = new Dictionary<int, float>();
+
+            for (int i = 1; i < firstPart; i++)
+            {
+                daysOnTerm.Add(i, float.Parse(tbFirstPart.Text));
+            }
+            for (int i = firstPart; i < secondPart; i++)
+            {
+                daysOnTerm.Add(i, float.Parse(tbSecondPart.Text));
+            }
+            for (int i = secondPart; i <= term; i++)
+            {
+                daysOnTerm.Add(i, float.Parse(tbThirdPart.Text));
+            }
+
+            foreach (var pair in daysOnTerm)
+            {
+                Console.WriteLine("{0} {1}", pair.Key, pair.Value);
+
+            }
+
+            
         }
     }
 }

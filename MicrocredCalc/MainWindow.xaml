@@ -7,23 +7,23 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox Height="25" Margin="250,60,0,0" TextWrapping="Wrap" Text=""  VerticalAlignment="Top" Width="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
-        <TextBox Height="25" Margin="250,110,0,0" TextWrapping="Wrap" Text=""  VerticalAlignment="Top" Width="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
-        <TextBox Height="25" Margin="585,60,0,0" TextWrapping="Wrap" Text=""  VerticalAlignment="Top" Width="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
-        <TextBox Height="25" Margin="585,110,0,0" TextWrapping="Wrap" Text=""  VerticalAlignment="Top" Width="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
-        <TextBox Height="25" Margin="585,160,0,0" TextWrapping="Wrap" Text=""  VerticalAlignment="Top" Width="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBox x:Name="tbSum" Height="25" Margin="250,60,0,0" TextWrapping="Wrap" Text=""  VerticalAlignment="Top" Width="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBox x:Name="tbTerm" Height="25" Margin="250,110,0,0" TextWrapping="Wrap" Text=""  VerticalAlignment="Top" Width="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBox x:Name="tbFirstPart" Height="25" Margin="585,60,0,0" TextWrapping="Wrap" Text=""  VerticalAlignment="Top" Width="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBox x:Name="tbSecondPart" Height="25" Margin="585,90,0,0" TextWrapping="Wrap" Text=""  VerticalAlignment="Top" Width="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBox x:Name="tbThirdPart" Height="25" Margin="585,120,0,0" TextWrapping="Wrap" Text=""  VerticalAlignment="Top" Width="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left"/>
 
-        <Label Content="Сумма займа" Margin="135,60,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <Label Content="Срок займа" Margin="135,110,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <Label Content="Ставка в первую треть срока" Margin="385,60,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <Label Content="Ставка во вторую треть срока" Margin="385,110,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <Label Content="Ставка в остаток срока" Margin="385,160,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Label x:Name="lbSum" Content="Сумма займа" Margin="135,60,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Label x:Name="lbTerm" Content="Срок займа" Margin="135,110,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Label x:Name="lbFirstPart" Content="Ставка в первую треть срока" Margin="385,60,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Label x:Name="lbSecondPart" Content="Ставка во вторую треть срока" Margin="385,90,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Label x:Name="lbThirdPart" Content="Ставка в остаток срока" Margin="385,120,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
 
-        <Button Content="Рассчитать" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="350,250,0,0"/>
-        <Label Content="Общая сумма выплаты: " Margin="135,300,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <Label Content="Сумма процентов: " Margin="135,330,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <Label Content="Эффективная ставка: " Margin="135,360,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Button x:Name="btnCalculate" Content="Рассчитать" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="350,250,0,0" Click="Calculate_Click"/>
+        <Label x:Name="lbPayment" Content="Общая сумма выплаты: " Margin="135,300,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Label x:Name="lbPercentSum" Content="Сумма процентов: " Margin="135,330,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Label x:Name="lbEffRate" Content="Эффективная ставка: " Margin="135,360,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <ListBox HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="600,300,0,0"/>
-        <Label Content="Детализация выплат" Margin="585,247,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Label x:Name="lbDetail" Content="Детализация выплат" Margin="585,247,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
     </Grid>
 </Window>
