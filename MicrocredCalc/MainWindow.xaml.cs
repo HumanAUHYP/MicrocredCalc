@@ -1,17 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Microsoft.Win32;
+using System.IO;
+using System.Text;
+
 
 
 namespace MicrocredCalc
@@ -46,10 +39,6 @@ namespace MicrocredCalc
                 EnterPercent();
                 tbFrom.Text = "";
                 tbBy.Text = "";
-                tbDetail.Text = "";
-                lbPaymentSum.Content = "";
-                lbPercentSum.Content = "";
-                lbEffRate.Content = "";
             }
             catch (ArgumentException)
             {
@@ -65,6 +54,10 @@ namespace MicrocredCalc
         {
             daysOnTerm = null;
             daysOnTerm = new Dictionary<int, double>();
+            tbDetail.Text = "";
+            lbPaymentSum.Content = "Общая сумма выплаты: ";
+            lbPercentSum.Content = "Сумма процентов: ";
+            lbEffRate.Content = "Эффективная ставка: ";
         }
 
         public void Calculate()
@@ -76,7 +69,6 @@ namespace MicrocredCalc
 
             foreach (var pair in daysOnTerm)
             {
-                Console.WriteLine($"{pair.Key} {pair.Value}");
                 percentSum += loanSum * (pair.Value / 100);
                 detail += $"\n{pair.Key}\t{pair.Value}\t{percentSum}\t{loanSum + percentSum}";
             }
@@ -119,6 +111,41 @@ namespace MicrocredCalc
             for (int i = from; i <= by; i++)
             {
                 daysOnTerm.Add(i, percent);
+            }
+        }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog dlgSave = new SaveFileDialog();
+
+            dlgSave.Filter = "Текст (*.txt)|*.txt";
+
+            if (dlgSave.ShowDialog() == true)
+            {
+                using (StreamWriter sw = new StreamWriter(dlgSave.OpenFile(), Encoding.Default))
+                {
+                    sw.Write(tbDetail.Text);
+                    sw.Close();
+                }
+            }
+        }
+
+        private void Open_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog dlgOpen = new OpenFileDialog();
+
+            dlgOpen.Filter = "Текст (*.txt)|*.txt";
+
+            if (dlgOpen.ShowDialog() == true)
+            {
+                FileInfo fileInfo = new FileInfo(dlgOpen.FileName);
+
+                StreamReader reader = new StreamReader(fileInfo.Open(FileMode.Open, FileAccess.Read), Encoding.GetEncoding(1251));
+
+                tbDetail.Text = reader.ReadToEnd();
+
+                reader.Close();
+                return;
             }
         }
     }

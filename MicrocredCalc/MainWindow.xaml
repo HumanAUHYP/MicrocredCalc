@@ -13,10 +13,10 @@
 
         <Label x:Name="lbSum" Content="Сумма займа" Margin="170,85,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="67" Width="292" FontSize="36"/>
         <Label x:Name="lbTerm" Content="Срок займа" Margin="170,213,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="67" Width="292" FontSize="36"/>
-        <Label Content="С" Margin="853,85,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="67" Width="44" FontSize="36"/>
-        <TextBox x:Name="tbFrom" Height="66" Margin="906,85,0,0" TextWrapping="Wrap" Text="1"  VerticalAlignment="Top" Width="85" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" FontSize="36"/>
-        <Label Content="По" Margin="1025,85,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="67" Width="67" FontSize="36"/>
-        <TextBox x:Name="tbBy" Height="66" Margin="1105,85,0,0" TextWrapping="Wrap" Text="10"  VerticalAlignment="Top" Width="85" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" FontSize="36"/>
+        <Label x:Name="lbFrom" Content="С" Margin="853,85,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="67" Width="44" FontSize="36"/>
+        <TextBox x:Name="tbFrom" Height="66" Margin="906,85,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="85" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" FontSize="36"/>
+        <Label x:Name="lbBy" Content="По" Margin="1025,85,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="67" Width="67" FontSize="36"/>
+        <TextBox x:Name="tbBy" Height="66" Margin="1105,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" FontSize="36"/>
         <Button x:Name="btnEnterPercents" Content="Ввод" HorizontalAlignment="Left" VerticalAlignment="Top" Width="214" Margin="1150,229,0,0" Click="EnterPercents_Click" Height="57" FontSize="36"/>
 
         <Button x:Name="btnCalculate" Content="Рассчитать" HorizontalAlignment="Left" VerticalAlignment="Top" Width="238" Margin="723,574,0,0" Click="Calculate_Click" Height="65" FontSize="36"/>
@@ -24,7 +24,10 @@
         <Label x:Name="lbPaymentSum" Content="Общая сумма выплаты: " Margin="170,704,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="66" Width="553" FontSize="36"/>
         <Label x:Name="lbPercentSum" Content="Сумма процентов: " Margin="170,782,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="66" Width="553" FontSize="36"/>
         <Label x:Name="lbEffRate" Content="Эффективная ставка: " Margin="170,857,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="68" Width="553" FontSize="36"/>
-        <Button x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" VerticalAlignment="Top" Width="238" Margin="723,857,0,0" Click="Calculate_Click" Height="65" FontSize="36"/>
+        <Button x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" VerticalAlignment="Top" Width="238" Margin="723,857,0,0" Click="Reset_Click" Height="65" FontSize="36"/>
+        <Button x:Name="btnSave" Content="Сохранить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="214" Margin="1622,379,0,0" Click="Save_Click" Height="57" FontSize="36"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="100" Margin="2272,213,-460,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="btnOpen" Content="Открыть" HorizontalAlignment="Left" VerticalAlignment="Top" Width="214" Margin="1091,379,0,0" Click="Open_Click" Height="57" FontSize="36"/>
 
     </Grid>
 </Window>
