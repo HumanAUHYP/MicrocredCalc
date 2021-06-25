@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <TextBox Height="25" Margin="165,50,0,0" TextWrapping="Wrap" Text="" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox Height="25" Margin="165,100,0,0" TextWrapping="Wrap" Text="" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox Height="25" Margin="500,50,0,0" TextWrapping="Wrap" Text="" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox Height="25" Margin="500,100,0,0" TextWrapping="Wrap" Text="" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox Height="25" Margin="500,150,0,0" TextWrapping="Wrap" Text="" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+        <Label Content="Сумма займа" HorizontalAlignment="Left" Margin="50,50,0,0" VerticalAlignment="Top"/>
+        <Label Content="Срок займа" HorizontalAlignment="Left" Margin="50,100,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ставка в первую треть срока" HorizontalAlignment="Left" Margin="300,50,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ставка во вторую треть срока" HorizontalAlignment="Left" Margin="300,100,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ставка в остаток срока" HorizontalAlignment="Left" Margin="300,150,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
